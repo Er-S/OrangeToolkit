@@ -19,14 +19,14 @@ import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 
 /**
  * 
- * TODO :主界面
+ * TODO 主界面
  * 
  * @author Cookie Eyre
  * @date 2018年7月5日
  * @time 下午2:59:02
- * @version 0.2.0
- * @remarks 4
- *
+ * @version 0.2.1
+ * @remarks 5
+ * 
  */
 
 
@@ -35,15 +35,15 @@ import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
  * ** Change Log **
  * 
  * * V 0.2.0
- * 导入皮肤:BeautyEye
- * 设置退出按钮样式
+ * 1.导入皮肤:BeautyEye
+ * 2.设置退出按钮样式
  * 
  * * V 0.1.0
- * 创建主界面
- * 创建设置,退出按钮
- * 创建设置界面
+ * 1.创建主界面
+ * 2.创建设置,退出按钮
+ * 3.创建设置界面
  * 创建欢迎栏:
- *  名称,版本,Copyright
+ * 名称,版本,Copyright
  * 
  */
 
@@ -182,6 +182,7 @@ public class mainWindow {
 			
 			@Override
 			public void windowOpened(WindowEvent e) {
+				System.out.println("[INFO]Window Opened");
 				// TODO Auto-generated method stub
 				
 			}
@@ -206,19 +207,21 @@ public class mainWindow {
 			
 			@Override
 			public void windowClosing(WindowEvent e) {
-				System.out.println("Exit...");
+				System.out.println("[INFO]Close Window by Exit ");
 				System.exit(0);
 				
 			}
 			
 			@Override
 			public void windowClosed(WindowEvent e) {
+				System.out.println("[INFO]Window Closed");
 				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void windowActivated(WindowEvent e) {
+				System.out.println("[INFO]Window Actived");
 				// TODO Auto-generated method stub
 				
 			}
