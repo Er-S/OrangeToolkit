@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,8 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
-import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
 /**
  * 
@@ -25,7 +27,7 @@ import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
  * @date 2018年7月5日
  * @time 下午2:59:02
  * @version 0.2.1
- * @remarks 5
+ * @remarks 7
  * 
  */
 
@@ -50,6 +52,9 @@ import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 public class mainWindow {
 	
 	static void setting() {
+		
+		// 设置窗口
+		System.out.println("[INFO]Loading setting window ");
 		JFrame frSetting = new JFrame("设置");
 		frSetting.setLocation(180, 120);
 		JPanel setWel = new JPanel();
@@ -60,7 +65,7 @@ public class mainWindow {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("[WARN]This is coding...");
+				System.out.println("[WARN]Try to start an unexist code ");
 				JOptionPane.showMessageDialog(
 						frSetting,
 						"对不起,此功能正在加入",
@@ -81,61 +86,52 @@ public class mainWindow {
 	public static void main(String[] args) {
 		
 		// 导入BeautifulEye
-		System.out.println("[INFO]Loading \"BeautifulEye\"");
+		System.out.println("[INFO]Loading \"BeautifulEye\" ");
 		try
 	    {
 	        org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
 	    }
 	    catch(Exception e)
 	    {
-	        //TODO exception
+	       //UNTODO exception
 	    }
 		
 		// 开启系统
-		System.out.println("[INFO]System Start");
+		System.out.println("[INFO]System Start ");
 		
 		// 主界面
-//		BeautyEyeLNFHelper.frameBorderStyle
-//				= BeautyEyeLNFHelper.FrameBorderStyle.translucencyAppleLike;
+		BeautyEyeLNFHelper
+		.frameBorderStyle
+				= BeautyEyeLNFHelper.FrameBorderStyle.translucencyAppleLike;
 		UIManager.put("RootPane.setupButtonVisible", false);
-		System.out.println("[INFO]Loading Main Window");
-		JFrame main = new JFrame("Orange - 我的第一个应用程序");
-//        main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		System.out.println("[INFO]Loading Main Window ");
+		JFrame main = new JFrame("Orange工具箱 ");
+        main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		main.setLocation(180, 120);
 		main.setLayout(new FlowLayout());
-		main.setSize(660, 420);
+//		main.setSize(660, 420);
 		
-		// TODO:欢迎文字
-		System.out.println("[INFO]Loading Welcome Label");
-		JLabel laWel =new JLabel();
-		laWel.setText("         -_-  欢迎使用由 Cookie Eyre 开发的 Orange 工具箱  ^v^         ");
+		// 底栏信息
+		System.out.println("[INFO]Loading Deep Information ");
+		JPanel pDeep = new JPanel();
+		Box boDeep = Box.createVerticalBox();
+		boDeep.add(new JLabel("Orange Debug "));
+		boDeep.add(new JLabel("Version 0.2.1 "));
+		pDeep.add(boDeep);
+		pDeep.add(new JLabel("              Copyright©Cookie Eyre 2018-7"));
 		
-		// 按钮1
-		System.out.println("[INFO]Loading Chick Button");
-		JButton bu1 = new JButton("点我!!");
-		bu1.setSize(66, 42);
-//		bu1.setLocation(10, 10);
-		// 按钮一事件
-		bu1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				// 信息对话框
-				System.out.println("[INFO]Chicked the button 1");
-				JOptionPane.showMessageDialog(
-						main,
-						"Hello! 你点击了按钮",
-						"提示",
-						JOptionPane.INFORMATION_MESSAGE
-				);
-			
-			}
-		});
+		// 主菜单
+		JButton buMenu = new JButton("菜单");
+		
+		// 标题
+		JLabel labTitle = new JLabel();
+		
+		JPanel pTitle = new JPanel();
+		pTitle.add(labTitle);
 		
 		// TODO:设置按钮
-		System.out.println("[INFO]Loading the setting window");
-		JButton buSetting = new JButton("设置");
+		System.out.println("[INFO]Loading the setting window ");
+		JButton buSetting = new JButton("☢");
 		buSetting.addActionListener(new ActionListener() {
 			
 			@Override
@@ -144,45 +140,27 @@ public class mainWindow {
 			}
 		});
 		
-		// 退出按钮
-		System.out.println("[INFO]Loading Exit Button");
-		JButton buExit = new JButton("退出");
-		buExit.setUI(new BEButtonUI().setNormalColor(BEButtonUI.NormalColor.red));
-		buExit.setSize(66, 42);
-		buExit.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Chick to exit...");
-				System.exit(0);
-				
-			}
-		});
-		
 		// 链接组件
-		System.out.print("[INFO]Connecting workers...");
-		JPanel pWelcome = new JPanel();
-		pWelcome.add(laWel);
-		JPanel pButton = new JPanel();
-		pButton.add(bu1);
-		JPanel pSetting = new JPanel();
-		pSetting.add(buSetting);
-		pSetting.add(buExit);
-		Box b1 = Box.createVerticalBox();
-		b1.add(pWelcome);
-		b1.add(pButton);
-		b1.add(pSetting);
-		JPanel p = new JPanel();
-		p.add(b1);
-		main.add(p);
-		System.out.println("[INFO] **Done!**");
+		System.out.println("[INFO]Connecting workers... ");
+		JPanel pSet = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		pSet.add(buSetting);
+		pSet.add(new JLabel("设置"));
+		JPanel pMainMenu = new JPanel();
+		pMainMenu.add(buMenu);
+		Box boMain = Box.createVerticalBox();
+		boMain.add(pSet);
+		boMain.add(pTitle);
+		boMain.add(pMainMenu);
+		boMain.add(pDeep);
+		main.add(boMain);
+		System.out.println("[INFO] **Done!** ");
 		
 		// 窗口事件
 		main.addWindowListener(new WindowListener() {
 			
 			@Override
 			public void windowOpened(WindowEvent e) {
-				System.out.println("[INFO]Window Opened");
+				System.out.println("[INFO]Window Opened ");
 				// TODO Auto-generated method stub
 				
 			}
@@ -214,14 +192,14 @@ public class mainWindow {
 			
 			@Override
 			public void windowClosed(WindowEvent e) {
-				System.out.println("[INFO]Window Closed");
+				System.out.println("[INFO]Window Closed ");
 				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void windowActivated(WindowEvent e) {
-				System.out.println("[INFO]Window Actived");
+				System.out.println("[INFO]Window Actived ");
 				// TODO Auto-generated method stub
 				
 			}
