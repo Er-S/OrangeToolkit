@@ -26,9 +26,9 @@ import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
  * @author Cookie Eyre
  * @date 2018年7月5日
  * @time 下午2:59:02
- * @last_time 2018年7月21日 18:42:33
+ * @last_time 2018年7月21日 19:06:36
  * @version 0.2.1
- * @remarks 8
+ * @remarks 9
  * 
  */
 
@@ -36,6 +36,16 @@ import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 /**
  * 
  * ** Change Log **
+ * 
+ * * V 0.3.0
+ * 更改ChangeLog模式
+ * 完善提示信息
+ * 删除退出按钮
+ * 更改窗口标题
+ * 更改底栏信息
+ * 加入 "主菜单"
+ * 将 "设置" 按钮移至左上角
+ * 加入 "标题" 栏
  * 
  * * V 0.2.0
  * 1.导入皮肤:BeautyEye
