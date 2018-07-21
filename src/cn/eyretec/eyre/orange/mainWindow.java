@@ -1,13 +1,13 @@
 package cn.eyretec.eyre.orange;
 
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import javax.swing.Box;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,8 +26,9 @@ import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
  * @author Cookie Eyre
  * @date 2018年7月5日
  * @time 下午2:59:02
+ * @last_time 2018年7月21日 18:42:33
  * @version 0.2.1
- * @remarks 7
+ * @remarks 8
  * 
  */
 
@@ -124,10 +125,13 @@ public class mainWindow {
 		JButton buMenu = new JButton("菜单");
 		
 		// 标题
-		JLabel labTitle = new JLabel();
-		
+		JLabel labTitle = new JLabel("Orange ");
+		labTitle.setFont(new Font(null, Font.PLAIN, 50));
+		JLabel labTitle2 = new JLabel("Toolkit");
+		labTitle2.setFont(new Font(null, Font.PLAIN, 30));
 		JPanel pTitle = new JPanel();
 		pTitle.add(labTitle);
+		pTitle.add(labTitle2);
 		
 		// TODO:设置按钮
 		System.out.println("[INFO]Loading the setting window ");
