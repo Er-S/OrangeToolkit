@@ -7,7 +7,7 @@ import javax.swing.WindowConstants;
 
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
-import cn.eyretec.eyre.orange.access.Visual;
+import cn.eyretec.eyre.orange.access.Window;
 
 /**
  * 
@@ -18,7 +18,7 @@ import cn.eyretec.eyre.orange.access.Visual;
  * @time 下午2:59:02
  * @last_time 2018年7月21日 20:15:38
  * @version 0.4.0
- * @remarks 11
+ * @remarks 12
  * 
  */
 
@@ -65,13 +65,13 @@ public class mainWindow {
 
 		System.out.println("[INFO]Initing \"Beauyiful Eye\"");
 		BeautyEyeLNFHelper.frameBorderStyle
-		= BeautyEyeLNFHelper.FrameBorderStyle.translucencyAppleLike;
+			= BeautyEyeLNFHelper.FrameBorderStyle.translucencyAppleLike;
 		UIManager.put("RootPane.setupButtonVisible", false);
-		Visual.Main.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		Window.Main.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		System.out.println("[INFO]Initing Main Window ");
-		Visual.Main.init();
-		Visual.Main.window.setVisible(true);
+		Window.Main.init();
+		Window.Main.window.setVisible(true);
 		
 		System.out.println("[INFO]Done ! At " + df.format(System.currentTimeMillis()));
 	}

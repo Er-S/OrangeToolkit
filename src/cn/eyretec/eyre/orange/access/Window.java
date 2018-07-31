@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,11 +25,11 @@ import cn.eyretec.eyre.orange.methodwindow.RandomWindow;
  * @time 下午7:16:12
  * @lasttime TODO: 2018年7月25日 19:17:19
  * @version 0.4.0
- * @remarks 1
+ * @remarks 2
  *
  */
 
-public class Visual {
+public class Window {
 	
 	public static class Main {
 		public static JFrame window = new JFrame("菜单 || Orange工具箱");
@@ -68,6 +67,7 @@ public class Visual {
 					RandomWindow.hex();
 				}
 			});
+			
 			window.addWindowListener(new WindowListener() {
 				
 				@Override
@@ -120,7 +120,7 @@ public class Visual {
 			left.add(new JLabel("Orange Debug / Version 0.4.0"));
 			left.add(userInfo);
 			info.add(left);
-			info.add(new JLabel("              Copyright©Cookie Eyre 2018-7"));
+			info.add(new JLabel("              Copyright?Cookie Eyre 2018-7"));
 			box.add(pSetting);box.add(title);box.add(pMenu);box.add(info);
 			window.add(box);
 			window.pack();
@@ -158,12 +158,12 @@ public class Visual {
 					
 				}
 			});
+			
 			window.addWindowListener(new WindowListener() {
 				
 				@Override
 				public void windowOpened(WindowEvent e) {
 					System.out.println("[INFO]Setting Window Opened");
-					
 				}
 				
 				@Override
@@ -215,6 +215,12 @@ public class Visual {
 	}
 	
 	public static class Menu {
+		public static JFrame window = new JFrame("菜单 || Orange工具箱");
+			public static Box box = Box.createVerticalBox();
+			
+	}
+	
+	public static class App {
 		
 	}
 }
