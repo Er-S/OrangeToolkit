@@ -16,9 +16,9 @@ import cn.eyretec.eyre.orange.access.Window;
  * @author Cookie Eyre
  * @date 2018年7月5日
  * @time 下午2:59:02
- * @last_time 2018年7月21日 20:15:38
- * @version 0.4.0
- * @remarks 12
+ * @last_time 2018年8月2日 14:57:21
+ * @version 0.3.1
+ * @remarks 13
  * 
  */
 
@@ -26,6 +26,15 @@ import cn.eyretec.eyre.orange.access.Window;
 /**
  * 
  * ** Change Log **
+ * 
+ * * V 0.3.1
+ * 功能 :
+ * - 加入功能 : 生成16禁止随机数
+ * - 设置 :
+ *    - 加入功能 : 更改底栏信息
+ * 代码 :
+ * - 更改UI代码格式
+ * - 加入 test 包
  * 
  * * V 0.3.0
  * 更改ChangeLog模式
@@ -51,6 +60,8 @@ import cn.eyretec.eyre.orange.access.Window;
  */
 
 public class mainWindow {
+	
+	public static final String ORANGEVER = "0.3.1";
 	
 	public static void main(String[] args) {
 		SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");

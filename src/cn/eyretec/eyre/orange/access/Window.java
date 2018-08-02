@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import cn.eyretec.eyre.orange.mainWindow;
 import cn.eyretec.eyre.orange.methodwindow.RandomWindow;
 
 /**
@@ -24,8 +25,8 @@ import cn.eyretec.eyre.orange.methodwindow.RandomWindow;
  * @date 2018年7月25日
  * @time 下午7:16:12
  * @lasttime TODO: 2018年7月25日 19:17:19
- * @version 0.4.0
- * @remarks 2
+ * @version 0.3.1
+ * @remarks 3
  *
  */
 
@@ -117,10 +118,10 @@ public class Window {
 			pSetting.add(new JLabel("选项"));
 			title.add(title1);title.add(title2);
 			pMenu.add(menu);
-			left.add(new JLabel("Orange Debug / Version 0.4.0"));
+			left.add(new JLabel("Orange Debug / Version " + mainWindow.ORANGEVER));
 			left.add(userInfo);
 			info.add(left);
-			info.add(new JLabel("              Copyright?Cookie Eyre 2018-7"));
+			info.add(new JLabel("              Copyright©Cookie Eyre 2018-7"));
 			box.add(pSetting);box.add(title);box.add(pMenu);box.add(info);
 			window.add(box);
 			window.pack();

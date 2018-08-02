@@ -23,7 +23,7 @@ import cn.eyretec.eyre.util.RandomAccess;
  * @date 2018年7月25日
  * @time 下午7:17:01
  * @lasttime TODO: 2018年7月31日 19:58:01
- * @version 0.4.0
+ * @version 0.3.1
  * @remarks 2
  *
  */
